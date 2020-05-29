@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript">
+			var id=1;
+			var emailid=1;
+			function add()
+			{
+				id++;
+				console.log("name:");
+				write = document.getElementById("name0");
+				write.innerHTML+="<div><b style='font-size:25px'>Phonenumber "+id+": </b><input type=number name=number[] placeholder='Enter your phone number' style='height:25px;border-width:2px;border-color:black' required></div>"
+				document.getElementById("addbutton").value=id;
+			}
+			function addemail()
+			{
+				emailid++;
+				write = document.getElementById("email0");
+				write.innerHTML+="<div style='margin-right:0px'><b style='font-size:25px'>Email "+emailid+": </b><input type=text name=email[] placeholder='Enter your EmailID' style='height:25px;border-width:2px;border-color:black' required></div>"
+				document.getElementById("email").value=emailid;
+			}
+		</script>
+	</head>
+	
+	<body style='background-color:black'>
+		<h1 align=center style='margin-left:350px;background-color:grey;box-shadow:1px 5px 10px 5px grey;text-shadow:3px 0px 3px white;color:white;font-size:50px;width:50%'>Phone Book Web app</h1>
+		<div style='background-color:white; height:500px; width:500px; margin-top:100px;margin-left:425px;box-shadow:2px 5px 10px 10px white' align=center>
+			
+			<h1><u>ADD DETAILS</u></h1>
+			<form action='http://localhost:12345/add.php' onsubmit="return validate" method='post'>
+			
+				<br><div><b style='font-size:25px'>Name : </b><input type=text name=name placeholder='Enter your name' style='height:25px;border-width:2px;border-color:black' required></div>
+				<div id='name0' style='margin-right:70px'><b style='font-size:25px'>Phonenumber 1: </b><input type=number name=number[] placeholder='Enter your phone number' style='height:25px;border-width:2px;border-color:black' required><input id="addbutton" style="margin-left:10px" type=button onclick='add()' value=+></div>
+				<div id='email0' style='margin-left:20px'><b style='font-size:25px'>Email 1: </b><input type=text name=email[] placeholder='Enter your EmailID' style='height:25px;border-width:2px;border-color:black' required><input id="email" style="margin-left:10px" type=button onclick='addemail()' value=+></div>			
+				<div style='margin-right:20px'><b style='font-size:25px'>DOB :</b><input type=date name=date >
+				<br><input type=submit value=SUBMIT style='margin-top:50px;font-size:20px;background-color:black;color:white;border-width:3px;box-shadow:2px 3px 3px 2px grey;height:40px;width:150px'>
+			</form>
+			
+		</div>
+		
+	</body>
+</html>
